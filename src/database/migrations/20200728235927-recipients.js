@@ -3,6 +3,10 @@
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     return queryInterface.createTable("recipients", {
+      nameAdmin: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
       nameRecipient: {
         type: Sequelize.STRING,
         allowNull: false,
