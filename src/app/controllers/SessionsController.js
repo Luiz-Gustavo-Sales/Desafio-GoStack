@@ -6,9 +6,6 @@ class SessionsController {
     //pegando os dados enviado pelo body
     const { email, password } = req.body;
 
-    if (!req.body) {
-      return res.json({ erro: "Passando Nada no Body" });
-    }
     //buscar usuário pelo e-mail, pois ele é único
     const user = await User.findOne({ where: { email } });
 

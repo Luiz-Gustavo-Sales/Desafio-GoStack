@@ -3,36 +3,53 @@
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     return queryInterface.createTable("recipients", {
-      nameAdmin: {
+      id: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        autoIncrement: true,
+        primaryKey: false,
+      },
+      //chave primaria
+      cod_envio: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        autoIncrement: true,
+        primaryKey: true,
+      },
+      name_recepient: {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      nameRecipient: {
+      rua_recepient: {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      ruaRecipient: {
-        type: Sequelize.STRING,
-        allowNull: false,
-      },
-      numberRecipient: {
+      number_recepient: {
         type: Sequelize.INTEGER,
         allowNull: false,
       },
-      complementRecipient: {
+      complement_recepient: {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      stateRecipient: {
+      state_recepient: {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      cityRecipient: {
+      city_recepient: {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      cepRecipient: {
+      cep_recepient: {
         type: Sequelize.STRING,
+        allowNull: false,
+      },
+      created_at: {
+        type: Sequelize.DATE,
+        allowNull: false,
+      },
+      updated_at: {
+        type: Sequelize.DATE,
         allowNull: false,
       },
     });

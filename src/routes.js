@@ -9,8 +9,9 @@ routes.post("/users", userController.store);
 
 routes.post("/sessions", SessionController.store);
 
-//apenas usuários autenticados pelos tokes vão poder usar as proximas  rotas, apenas registrados
 routes.use(authMiddlewares);
-
+//apenas usuários autenticados pelos tokes vão poder usar as proximas  rotas, apenas registrados
 routes.post("/cadDestinatario",recepient.store)
+
+routes.put("/editDestinatario",recepient.update)
 module.exports = routes;

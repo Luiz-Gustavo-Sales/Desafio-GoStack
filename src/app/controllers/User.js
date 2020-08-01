@@ -15,5 +15,6 @@ class userController {
       email,
     });
   }
+
 }
 export default new userController();

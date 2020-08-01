@@ -19,7 +19,7 @@ export default async (req, res, next) => {
     //recebendo o ID na requisição
     req.userId =decoded.id;
   } catch (error) {
-    console.log(error + "Erro na autentication de token");
+    return res.json({erro:"Token Invalid"})
   }
   return next();
 };
